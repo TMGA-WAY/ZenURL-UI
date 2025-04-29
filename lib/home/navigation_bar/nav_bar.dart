@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+import 'package:zen_url_ui/home/navigation_bar/nav_bar_items.dart';
+
+class NavBar extends StatelessWidget implements PreferredSizeWidget {
+  const NavBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(top: 20.0),
+      color: const Color(0xffECE9E1),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Row(
+          children: [
+            Text(
+              "ZenUrl",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xffE43C13),
+              ),
+            ),
+
+            Spacer(),
+
+            NavBarItem(title: "Login", onPressed: () {}),
+
+            NavBarItem(title: "Register Now", onPressed: () {}),
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(120);
+}
