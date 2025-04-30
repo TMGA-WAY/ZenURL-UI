@@ -30,8 +30,10 @@ class InputArea extends StatelessWidget {
             ),
 
             SizedBox(width: 15),
-            Flexible(
+            SizedBox(
+              width: 450,
               child: TextField(
+                style: TextStyle(color: const Color(0xffECE9E1)),
                 decoration: InputDecoration(
                   hintText: "Enter Your Long Links",
                   hintStyle: TextStyle(color: const Color(0xffECE9E1)),
@@ -48,6 +50,9 @@ class InputArea extends StatelessWidget {
                 width: 150,
                 child: ElevatedButton(
                   onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:  const Color(0xffECE9E1),
+                  ),
                   child: Text(
                     "Shorten Now",
                     style: TextStyle(color: const Color(0xffE43C13), fontWeight: FontWeight.bold),
