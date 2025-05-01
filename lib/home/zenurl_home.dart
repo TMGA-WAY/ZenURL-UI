@@ -18,9 +18,31 @@ class _ZenURLState extends State<ZenURL> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const NavBar(),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 80),
-        child: Column(children: [MainHeading(), SizedBox(height: 20), InputArea(), LinkTable()]),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            child: Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
+
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      MainHeading(),
+                      SizedBox(height: 40),
+                      InputArea(),
+                      SizedBox(height: 40),
+                      LinkTable(),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
