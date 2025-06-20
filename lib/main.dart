@@ -6,15 +6,13 @@ void main() {
     MaterialApp(
       title: 'ZenURL',
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xffECE9E1),
-        fontFamily: "QuickSand",
-        textTheme: const TextTheme(
-          bodyLarge: TextStyle(color:  Color(0xffE43C13)),
-          bodyMedium: TextStyle(color:  Color(0xffE43C13)),
-          bodySmall: TextStyle(color:  Color(0xffE43C13))
-        )
+        fontFamily: "Quicksand",
 
-        
+        scaffoldBackgroundColor: const Color.fromRGBO(17, 17, 19, 1),
+
+        textTheme: ThemeData().textTheme.copyWith(
+          bodyLarge: TextStyle(color: Color(0xffffffff), fontWeight: FontWeight.bold),
+        ),
       ),
       home: ZenURL(),
       debugShowCheckedModeBanner: false,

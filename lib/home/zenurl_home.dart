@@ -21,6 +21,7 @@ class _ZenURLState extends State<ZenURL> {
       body: LayoutBuilder(
         builder: (context, constraints) {
           return SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             child: Center(
               child: ConstrainedBox(
                 constraints: BoxConstraints(minHeight: constraints.maxHeight),

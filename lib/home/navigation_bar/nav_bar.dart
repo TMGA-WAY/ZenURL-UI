@@ -8,7 +8,6 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 20.0),
-      color: const Color(0xffECE9E1),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Row(
@@ -16,9 +15,10 @@ class NavBar extends StatelessWidget implements PreferredSizeWidget {
             SelectableText(
               "ZenUrl",
               style: TextStyle(
+                fontFamily: 'Quicksand',
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xffE43C13),
+                color: const Color.fromRGBO(255, 255, 255, 1),
               ),
             ),
 

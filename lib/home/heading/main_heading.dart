@@ -8,15 +8,17 @@ class MainHeading extends StatelessWidget {
     return Column(
       children: [
         Center(
-          child: Text(
+          child: SelectableText(
             "Shorten Your Looooong Links",
-            style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+            style: TextStyle(fontFamily: 'Quicksand',fontSize: 36, fontWeight: FontWeight.bold, color: const Color.fromRGBO(255, 255, 255, 1)),
           ),
         ),
         Center(
-          child: Text(
+          child: SelectableText(
             "ZenUrl is an efficient and easy to use URL shortening service.",
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontFamily: 'Quicksand'
+              ,fontSize: 14, fontWeight: FontWeight.bold, color: const Color.fromRGBO(161, 161, 170, 1)),
           ),
         ),
       ],

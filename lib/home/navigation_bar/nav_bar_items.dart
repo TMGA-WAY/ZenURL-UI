@@ -16,10 +16,18 @@ class NavBarItem extends StatelessWidget {
           // child: Text(title, style: TextStyle(fontSize: 18, color: const Color(0xffE43C13))),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: title == 'Register Now' ? const Color(0xff144EE3) : const Color(0xffECE9E1),
+              backgroundColor:
+                  title == 'Register Now' ? const Color.fromRGBO(218, 255, 1, 1) : const Color.fromRGBO(17, 17, 19, 1),
             ),
             onPressed: () {},
-            child: Text(title, style: TextStyle(fontSize: 18, color: title == 'Register Now' ? const Color(0xffFFFFFF) : const Color(0xffE43C13))),
+            child: Text(
+              title,
+              style: TextStyle(
+                fontFamily: 'Quicksand',
+                fontSize: 18,
+                color: title == 'Register Now' ? const Color.fromRGBO(17, 17, 19, 1) : const Color.fromRGBO(255, 255, 255, 1),
+              ),
+            ),
           ),
         ),
       ),
