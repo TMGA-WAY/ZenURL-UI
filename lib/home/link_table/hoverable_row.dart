@@ -1,9 +1,13 @@
-import 'dart:js_interop';
+import 'dart:html' as html;
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+
 import 'package:zen_url_ui/home/model/link_information.dart';
+import 'package:zen_url_ui/home/link_table/qr_overlay.dart';
 
 class HoverableRow extends StatefulWidget {
   final LinkInformation link;
@@ -22,7 +26,7 @@ class _HoverableLink extends State<HoverableRow> {
     await Clipboard.setData(ClipboardData(text: link.shortUrl));
 
     Fluttertoast.showToast(
-      msg: "Copied to Clipboard ..",
+      msg: "Copied to Clipboard..",
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.CENTER,
       timeInSecForIosWeb: 1,
@@ -77,7 +81,10 @@ class _HoverableLink extends State<HoverableRow> {
 
                     // Share Icon
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        //  Open the links in new tab
+                        html.window.open(link.shortUrl, '_blank');
+                      },
                       icon: Icon(Icons.open_in_new),
                       color: hoverColorOpposite,
                       padding: EdgeInsets.zero,
@@ -103,7 +110,19 @@ class _HoverableLink extends State<HoverableRow> {
                 child: Align(
                   alignment: Alignment.centerLeft,
 
-                  child: Icon(Icons.qr_code, color: hoverColorOpposite),
+                  child: Builder(
+                    builder:
+                        (buttonContext) => IconButton(
+                          onPressed: () {
+                            final RenderBox box = buttonContext.findRenderObject() as RenderBox;
+                            final Offset position = box.localToGlobal(Offset.zero);
+                            QROverlay.show(buttonContext, link.shortUrl, position);
+                          },
+                          icon: Icon(Icons.qr_code),
+                          color: hoverColorOpposite,
+                          padding: EdgeInsets.zero,
+                        ),
+                  ),
                 ),
               ),
 
